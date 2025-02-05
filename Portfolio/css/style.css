@@ -1,0 +1,129 @@
+:root {
+  --prime: #e1dfdd;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PP Neue Montreal', 'monospace';
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--prime);
+  color: var(--black);
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: center;
+  max-width: 1366px;
+  margin: auto;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.navbar {
+  position: fixed; /* Stays fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* Ensures it stays above all other content */
+  background-color: var(--prime);
+}
+
+.wrapper {
+  max-width: 1366px;
+  margin: auto;
+  padding: 1rem 1rem 0rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--black);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.nav-links a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.grid-container {
+  position: relative;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 2rem;
+  grid-template-areas:
+    'one one one one one one one one one one'
+    'seven seven seven seven four four four four four four '
+    'two two two . . . . . three .';
+}
+
+/* Grid Items */
+.grid-item-one {
+  grid-area: one;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 77px;
+}
+
+.grid-item-two {
+  grid-area: two;
+  font-size: 2rem;
+}
+
+.grid-item-three {
+  grid-area: three;
+  font-size: 4rem;
+}
+
+.grid-item-four {
+  grid-area: four;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      'one one one one'
+      'four four four four'
+      'two two . .';
+  }
+  .grid-item-three {
+    display: none;
+  }
+}
