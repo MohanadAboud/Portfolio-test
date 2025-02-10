@@ -1,6 +1,8 @@
 :root {
   --prime: #e1dfdd;
   --black: #000;
+  --faded: #0000001f;
+  --green: #6c7558;
 }
 
 * {
@@ -10,30 +12,28 @@
   font-family: 'PP Neue Montreal', 'monospace';
 }
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: var(--prime);
+  background-color: var(--faded);
   color: var(--black);
 }
 
 .section {
-  height: 100vh;
   scroll-snap-align: center;
   max-width: 1366px;
   margin: auto;
   padding: 1rem 1rem 0rem 1rem;
 }
 
+header {
+  height: 100%;
+}
+
 .navbar {
-  position: fixed; /* Stays fixed at the top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999; /* Ensures it stays above all other content */
+  z-index: 9999;
   background-color: var(--prime);
 }
 
@@ -48,8 +48,9 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  color: var(--black);
+  display: inline-block;
+  height: 1.5rem;
 }
 
 .nav-links {
@@ -61,8 +62,10 @@ body {
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
+
+/* sort streg under nav links  */
 
 .nav-links a::after {
   content: '';
@@ -82,16 +85,58 @@ body {
   transform: scaleX(1);
 }
 
+/* burger menu open og close CSS */
+.burger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--prime);
+  z-index: 10000;
+}
+
+.sidebar ul {
+  list-style: none;
+  text-align: center;
+}
+
+.sidebar li {
+  margin: 4rem 0rem;
+}
+.sidebar a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close-btn {
+  font-size: 4rem;
+  cursor: pointer;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+/* grid til hero section */
 .grid-container {
   position: relative;
   margin-top: 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12, 1fr));
   grid-gap: 2rem;
   grid-template-areas:
-    'one one one one one one one one one one'
-    'seven seven seven seven four four four four four four '
-    'two two two . . . . . three .';
+    'one one one one one one one one one one one one '
+    '. . . . . . . . . four four four '
+    'two two two . . . . . . . . three';
+  align-items: end;
 }
 
 /* Grid Items */
@@ -110,20 +155,287 @@ body {
 .grid-item-three {
   grid-area: three;
   font-size: 4rem;
+  cursor: pointer;
+}
+
+.grid-item-three p {
+  display: inline-block;
+  color: var(--black);
+}
+
+/* bruges til animationen af min arrow */
+.grid-item-three a p:hover {
+  animation: wiggle 0.5s ease-in-out infinite;
 }
 
 .grid-item-four {
   grid-area: four;
 }
 
-@media (max-width: 768px) {
+/* OM MIG Section */
+
+#about > article > h2 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  margin: 10rem auto;
+  max-width: 1240px;
+}
+
+.right-side-txt {
+  max-width: 700px;
+  gap: 0.5rem;
+}
+.right-side-txt > h2 {
+  display: inline;
+  background-color: rgba(202, 205, 50, 0.588);
+  font-style: italic;
+}
+div.right-side-txt > p {
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.container {
+  transition: all 0.2s;
+}
+.card {
+  border-radius: 50px 0px 50px 50px;
+}
+
+.right-side-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  color: var(--prime);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+}
+
+.btn:not([disabled]):active {
+  box-shadow: var(--prime) 2px 2px 0 0, var(--black) 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* SKILLSET */
+
+/* #Kompetencer {
+} */
+#Kompetencer h2 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+#Kompetencer h4 {
+  margin: 0.5rem 0rem;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skills {
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 0;
+
+  line-height: 1.6;
+}
+
+/* projekter */
+
+#Projekter > h2 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  height: 90vh;
+  width: 100%;
+  background-color: var(--green);
+}
+
+.footer-content {
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-content h1 {
+  margin: 2rem 2rem;
+}
+.footer-content a {
+  text-decoration: none;
+  color: var(--prime);
+  padding-bottom: 2rem;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 4rem;
+}
+.made-by {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* Brugte https://www.shapedivider.app/ til denne del */
+
+.custom-shape-divider {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+}
+
+.custom-shape-divider .shape-fill {
+  fill: var(--prime);
+}
+
+/* breakpoint */
+
+@media (max-width: 1106px) {
   .grid-container {
     grid-template-areas:
-      'one one one one'
-      'four four four four'
-      'two two . .';
+      'one one one one .'
+      'four four four four .'
+      'two two . . three ';
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-gap: 2rem;
+  }
+
+  .grid-item-one {
+    line-height: 60px;
   }
   .grid-item-three {
     display: none;
+  }
+
+  div.grid-item-one > h2 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  div.grid-item-four > img {
+    width: 400px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+  .about-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 768px;
+    margin: 1.375rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  #about > div > div.container > img {
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+  }
+  .right-side-txt {
+    text-align: center;
+  }
+
+  .right-side-txt > h2 {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .right-side-txt > p {
+    text-align: left;
+  }
+
+  .right-side-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+
+  .skills {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 570px) {
+  body {
+    width: 100vh;
+  }
+  .grid-item-two {
+    font-size: 3rem;
+  }
+
+  .grid-item-four {
+    height: 200px;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    width: 100vh;
+  }
+}
+
+/* key frames animation til arrow knappen i header */
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
   }
 }

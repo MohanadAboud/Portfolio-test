@@ -10,38 +10,128 @@
     <header class="section">
       <nav class="navbar">
         <div class="wrapper">
-          <span class="logo">Mohanad Aboud</span>
+          <a href="index.html"><img class="logo" src="img/logo-1.svg" alt="logo" /></a>
           <ul class="nav-links">
-            <li><a href="#">Projekter</a></li>
-            <li><a href="#">About me</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#Projekter">Projekter</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="kontakt.html">CV</a></li>
           </ul>
+          <div class="burger" onclick="showSidebar()">&#9776;</div>
         </div>
       </nav>
+
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="hideSidebar()">&times;</div>
+        <ul>
+          <li><a href="#Projekter" onclick="hideSidebar()">Projekter</a></li>
+          <li><a href="#about" onclick="hideSidebar()">About me</a></li>
+          <li><a href="kontakt.html" onclick="hideSidebar()">CV</a></li>
+        </ul>
+      </div>
+
       <div class="grid-container">
         <div class="grid-item-one">
           <h2>Kreativ</h2>
           <h2><span class="auto-type"></span></h2>
         </div>
         <div class="grid-item-two">
-          <p>Multimediedesigner som &#10084; kodning.</p>
+          <p>
+            Multimediedesigner <br />
+            Portfolio 2025 &copy;
+          </p>
         </div>
         <div class="grid-item-three">
-          <p>&cudarrr;</p>
+          <a href="#about"><p>&cudarrr;</p></a>
         </div>
         <div class="grid-item-four">
           <img src="https://placehold.co/600x200" alt="Mig" />
         </div>
-        <div class="grid-container-row-four"></div>
       </div>
     </header>
-    <main>
-      <section class="section">About me</section>
-      <section class="section">Kompetencer</section>
-      <section class="section">Projekter</section>
-    </main>
-    <footer class="section">Footer</footer>
 
+    <main>
+      <section id="about" class="section">
+        <article>
+          <h2>web developer & Designer</h2>
+        </article>
+        <div class="about-container">
+          <div class="container">
+            <img class="card" src="https://placehold.co/375" alt="" />
+          </div>
+          <div class="right-side-container">
+            <div class="right-side-txt">
+              <h4>About me</h4>
+              <h2>Mohanad Aboud</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo in quam accusamus ipsam nemo. Minima cupiditate totam quia
+                reiciendis unde voluptatibus, ducimus, eligendi quos minus deleniti quam dolorum officia?
+              </p>
+            </div>
+            <div class="right-side-btn">
+              <button class="btn">Mit CV</button>
+              <a href="#footer"><button class="btn">Kontakt</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Kompetencer" class="section">
+        <h2>Kompetencer</h2>
+        <div class="skill-wrapper">
+          <div class="skills">
+            <h4>WEB DEV</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur minus optio animi autem magni, labore, repudiandae harum commodi
+              accusamus, repellat libero maiores illo? Rerum in voluptas tempora, non deserunt beatae.
+            </p>
+          </div>
+          <div class="skills">
+            <h4>DESIGN</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui cumque quibusdam adipisci, fugiat enim reprehenderit ipsa. Molestias
+              maiores consequuntur odio, accusamus inventore ut quis sequi quam vel atque repellat?
+            </p>
+          </div>
+          <div class="skills">
+            <h4>UX/UI</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error laborum magni, vitae dolorum provident architecto neque illum
+              totam dicta assumenda voluptas dolore numquam laudantium. Aspernatur animi quasi officia eos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Projekter" class="section">
+        <h2>Projekter</h2>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <!-- Brugt https://www.shapedivider.app/ til denne del -->
+      <div class="custom-shape-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+        </svg>
+      </div>
+      <div class="footer-content">
+        <!-- <h2>Kom i kontakt</h2> -->
+        <a href="mailto:mohanad.aboud7@gmail.com"><h1>mohanad.aboud7@gmail.com</h1></a>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank"><h3>LinkedIn</h3></a>
+          <a href="https://github.com/MohanadAboud" target="_blank"><h3>GitHub</h3></a>
+          <a href="#" target="_blank"><h3>Hent CV</h3></a>
+        </div>
+      </div>
+      <div class="made-by">
+        <p>Mohanad Aboud</p>
+        <p>Portfolio 2025</p>
+      </div>
+    </footer>
+
+    <script src="js/card.js"></script>
+
+    <!-- Typing animation JS -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed('.auto-type', {
@@ -52,6 +142,17 @@
 
         loop: true,
       })
+    </script>
+
+    <!-- burger menu -->
+    <script>
+      function showSidebar() {
+        document.getElementById('sidebar').style.display = 'block'
+      }
+
+      function hideSidebar() {
+        document.getElementById('sidebar').style.display = 'none'
+      }
     </script>
   </body>
 </html>
