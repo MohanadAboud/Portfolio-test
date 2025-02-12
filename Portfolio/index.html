@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Multimediedesigner Portfolio" />
+    <meta name="description" content="Fronend udvikling" />
+    <meta name="description" content="Design" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <title>Mohanad | Portfolio</title>
@@ -45,7 +50,7 @@
           <a href="#about"><p>&cudarrr;</p></a>
         </div>
         <div class="grid-item-four">
-          <a href="mailto:mohanad.aboud7@gmail.com"> <img src="https://placehold.co/600x200" alt="Mig" /></a>
+          <a href="mailto:mohanad.aboud7@gmail.com"> <img src="https://placehold.co/600x200" alt="Portfolio billed" /></a>
         </div>
       </div>
     </header>
@@ -57,7 +62,7 @@
         </article>
         <div class="about-container">
           <div class="container">
-            <a href="mailto:mohanad.aboud7@gmail.com"><img class="card" src="https://placehold.co/375" alt="" /></a>
+            <a href="mailto:mohanad.aboud7@gmail.com"><img class="card" src="https://placehold.co/375" alt="Portfolio billed" /></a>
           </div>
           <div class="custom-cursor" id="customCursor">KONTAKT</div>
 
@@ -117,29 +122,32 @@
           <img class="værktøjer-item" src="assets/wordpress-brands-solid.svg" alt="Wordpress-logo" />
         </div>
       </section>
+      <div class="custom-cursor" id="slideCursor">Case</div>
       <section id="Projekter" class="section">
         <h2>Projekter</h2>
-        <!-- Slideshow container -->
+        <!-- Slideshow container fra w3schools -->
         <div class="slideshow-container">
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
-            <a href="index.html"> <img src="img/pizza1.webp" style="width: 100%" /></a>
-            <div class="text">Caption Text</div>
+            <a href="liberta.html" class="img-bubble">
+              <img src="img/pizza1.webp" alt="header billed af liberta pizzaria's hjemmeside " style="width: 100%"
+            /></a>
           </div>
 
           <div class="mySlides fade">
-            <a href="zerobuzz.html"><img src="img/zerobuzz1.webp" style="width: 100%" /></a>
-            <div class="text">Caption Two</div>
+            <a href="zerobuzz.html" class="img-bubble"
+              ><img src="img/zerobuzz1.webp" alt="header billed af zerobuzz brew's hjemmeside " style="width: 100%"
+            /></a>
           </div>
 
           <div class="mySlides fade">
-            <a href=""> <img src="img/nippon1.webp" style="width: 100%" /></a>
-            <div class="text">Caption Three</div>
+            <a href="nippon.html" class="img-bubble">
+              <img src="img/nippon1.webp" alt="header billed af nippons hjemmeside " style="width: 100%"
+            /></a>
           </div>
 
-          <!-- Next and previous buttons -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+          <button class="next" onclick="plusSlides(1)">&#10095;</button>
         </div>
         <br />
       </section>
@@ -153,8 +161,14 @@
           <h1>@gmail.com</h1></a
         >
         <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/MohanadAboud" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank" aria-label="Visit Mohanad Aboud's LinkedIn profile">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://github.com/MohanadAboud" target="_blank" aria-label="Visit Mohanad Aboud's GitHub profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+
           <a href="#" target="_blank"><h4>CV</h4></a>
         </div>
       </div>
@@ -166,7 +180,7 @@
     <script src="js/slide.js"></script>
 
     <!-- Typing animation JS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" <link rel="preconnect"></script>
     <script>
       var typed = new Typed('.auto-type', {
         strings: ['^1000 Programmør', '^1000 Designer'],
