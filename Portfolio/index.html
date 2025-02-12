@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <title>Mohanad | Portfolio</title>
   </head>
   <body>
     <header class="section">
       <nav class="navbar">
         <div class="wrapper">
-          <a href="index.html"><img class="logo" src="img/logo-1.svg" alt="logo" /></a>
+          <a href="index.html"><img class="logo" src="assets/logo-1.svg" alt="logo" /></a>
           <ul class="nav-links">
             <li><a href="#Projekter">Projekter</a></li>
             <li><a href="#about">About me</a></li>
@@ -44,7 +45,7 @@
           <a href="#about"><p>&cudarrr;</p></a>
         </div>
         <div class="grid-item-four">
-          <img src="https://placehold.co/600x200" alt="Mig" />
+          <a href="mailto:mohanad.aboud7@gmail.com"> <img src="https://placehold.co/600x200" alt="Mig" /></a>
         </div>
       </div>
     </header>
@@ -56,19 +57,22 @@
         </article>
         <div class="about-container">
           <div class="container">
-            <img class="card" src="https://placehold.co/375" alt="" />
+            <a href="mailto:mohanad.aboud7@gmail.com"><img class="card" src="https://placehold.co/375" alt="" /></a>
           </div>
+          <div class="custom-cursor" id="customCursor">KONTAKT</div>
+
           <div class="right-side-container">
             <div class="right-side-txt">
-              <h4>About me</h4>
+              <h4>Om mig</h4>
               <h2>Mohanad Aboud</h2>
+              <h4></h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo in quam accusamus ipsam nemo. Minima cupiditate totam quia
-                reiciendis unde voluptatibus, ducimus, eligendi quos minus deleniti quam dolorum officia?
+                Jeg er multimediedesigner med fokus på at skabe brugervenlige og visuelt engagerende digitale oplevelser. Jeg er meget
+                detaljeorienteret og går op i, at designet skal være flot og funktionelt, så det skaber en god oplevelse for brugeren.
               </p>
             </div>
             <div class="right-side-btn">
-              <button class="btn">Mit CV</button>
+              <a href="om-mig.html"><button class="btn">Læs mere</button></a>
               <a href="#footer"><button class="btn">Kontakt</button></a>
             </div>
           </div>
@@ -81,61 +85,91 @@
           <div class="skills">
             <h4>WEB DEV</h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur minus optio animi autem magni, labore, repudiandae harum commodi
-              accusamus, repellat libero maiores illo? Rerum in voluptas tempora, non deserunt beatae.
+              Jeg udvikler brugervenlige og responsive hjemmesider med fokus på performance. Jeg har erfaring med teknologier som HTML, CSS,JavaScript
+              og frameworket React.
             </p>
           </div>
           <div class="skills">
             <h4>DESIGN</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui cumque quibusdam adipisci, fugiat enim reprehenderit ipsa. Molestias
-              maiores consequuntur odio, accusamus inventore ut quis sequi quam vel atque repellat?
+              Jeg arbejder med alt fra grafisk design og branding til udvikling af digitale prototyper, med fokus på funktionaliteten og æstetiken af
+              hjemmesiden.
             </p>
           </div>
           <div class="skills">
             <h4>UX/UI</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti error laborum magni, vitae dolorum provident architecto neque illum
-              totam dicta assumenda voluptas dolore numquam laudantium. Aspernatur animi quasi officia eos.
+              Jeg designer engagerende brugeroplevelser. Gennem wireframes, prototyper og brugertests sikrer jeg, at hvert design er både
+              brugervenligt.
             </p>
           </div>
         </div>
       </section>
 
+      <section id="værktøjer" class="section">
+        <h2>Værktøjer</h2>
+
+        <div class="værktøjer-wrapper">
+          <img class="værktøjer-item" src="assets/css-brands-solid.svg" alt="CSS-logo" />
+          <img class="værktøjer-item" src="assets/html5-brands-solid.svg" alt="HTML-logo" />
+          <img class="værktøjer-item" src="assets/js-brands-solid.svg" alt="Javascript-logo" />
+          <img class="værktøjer-item" src="assets/react-brands-solid.svg" alt="React-logo" />
+          <img class="værktøjer-item" src="assets/wordpress-brands-solid.svg" alt="Wordpress-logo" />
+        </div>
+      </section>
       <section id="Projekter" class="section">
         <h2>Projekter</h2>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <a href="index.html"> <img src="img/pizza1.webp" style="width: 100%" /></a>
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <a href="zerobuzz.html"><img src="img/zerobuzz1.webp" style="width: 100%" /></a>
+            <div class="text">Caption Two</div>
+          </div>
+
+          <div class="mySlides fade">
+            <a href=""> <img src="img/nippon1.webp" style="width: 100%" /></a>
+            <div class="text">Caption Three</div>
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
       </section>
     </main>
 
     <footer id="footer">
-      <!-- Brugt https://www.shapedivider.app/ til denne del -->
-      <div class="custom-shape-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
-        </svg>
-      </div>
       <div class="footer-content">
         <!-- <h2>Kom i kontakt</h2> -->
-        <a href="mailto:mohanad.aboud7@gmail.com"><h1>mohanad.aboud7@gmail.com</h1></a>
+        <a href="mailto:mohanad.aboud7@gmail.com"
+          ><h1>mohanad.aboud7</h1>
+          <h1>@gmail.com</h1></a
+        >
         <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank"><h3>LinkedIn</h3></a>
-          <a href="https://github.com/MohanadAboud" target="_blank"><h3>GitHub</h3></a>
-          <a href="#" target="_blank"><h3>Hent CV</h3></a>
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/MohanadAboud" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank"><h4>CV</h4></a>
         </div>
       </div>
-      <div class="made-by">
-        <p>Mohanad Aboud</p>
-        <p>Portfolio 2025</p>
-      </div>
     </footer>
+    <script src="js/bubble.js"></script>
 
     <script src="js/card.js"></script>
+
+    <script src="js/slide.js"></script>
 
     <!-- Typing animation JS -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed('.auto-type', {
-        strings: ['^1000 programmør', '^1000 Designer'],
+        strings: ['^1000 Programmør', '^1000 Designer'],
         typespeed: 1000000,
         fadeOut: true,
         backDelay: 2000,

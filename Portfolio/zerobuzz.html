@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>Mohanad | Portfolio</title>
+  </head>
+  <body>
+    <header class="section">
+      <nav class="navbar">
+        <div class="wrapper">
+          <a href="index.html"><img class="logo" src="assets/logo-1.svg" alt="logo" /></a>
+          <ul class="nav-links">
+            <li><a href="index.html">Projekter</a></li>
+            <li><a href="index.html">About me</a></li>
+            <li><a href="kontakt.html">CV</a></li>
+          </ul>
+          <div class="burger" onclick="showSidebar()">&#9776;</div>
+        </div>
+      </nav>
+
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="hideSidebar()">&times;</div>
+        <ul>
+          <li><a href="index.html" onclick="hideSidebar()">Projekter</a></li>
+          <li><a href="index.html" onclick="hideSidebar()">About me</a></li>
+          <li><a href="kontakt.html" onclick="hideSidebar()">CV</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="projekt-container">
+        <div class="text-section rellax" data-rellax-speed="0">
+          <h1>ZeroBuzz brew</h1>
+          <h6>case</h6>
+          <p>
+            Virksomheden er ZeroBuzz Brew; et fiktivt mikrobryggeri, der gør det muligt at nyde et lækkert udvalgt af de bedste alkoholfri øl.
+            ZeroBuzz Brew har over de seneste par år haft stor succes med at opdyrke et stadig stigende marked for alkoholfri øl og har i Danmark
+            opnået en position som "den frække challenger" til Carlsberg, der fortsat er markedsledende.
+          </p>
+          <p>
+            ZeroBuzz Brew ønsker, at websitet skaber en god brugeroplevelse. Det skal fremvise udvalget af alkoholfri øl og fremhæve produktets smag,
+            kvalitet og egnethed til forskellige anledninger. Antallet af produkter der optræder på websitet bestemmes af dig.
+          </p>
+          <h6>Min opgave</h6>
+          <p>
+            Udvikle et website for ZeroBuzz Brew, der hjælper med at præsentere bryggeriet som det ultimative valg for folk, der ønsker øl uden
+            alkohol.
+          </p>
+        </div>
+        <div class="image-section" id="img-re">
+          <img class="rellax" data-rellax-speed="-4" src="img/zerobuzz1.webp" alt="zerobuzz hjemmesiden" />
+          <img class="rellax" data-rellax-speed="-3" src="img/zerobuzz2.webp" alt="zerobuzz hjemmesiden" />
+        </div>
+      </section>
+      <section class="projekt-btn">
+        <a href="https://zerobuzz.aboudme.dk/" target="_blank"><button class="btn">hjemmeside</button></a>
+        <a href="https://github.com/MohanadAboud/ZeroBuzz" target="_blank"><button class="btn">Github</button></a>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-content">
+        <!-- <h2>Kom i kontakt</h2> -->
+        <a href="mailto:mohanad.aboud7@gmail.com"
+          ><h1>mohanad.aboud7</h1>
+          <h1>@gmail.com</h1></a
+        >
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/mohanad-aboud-64a940328/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/MohanadAboud" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank"><h4>CV</h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- rellax til parallax animation -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"
+      integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      var rellax = new Rellax('.rellax')
+    </script>
+
+    <!-- burger menu -->
+    <script>
+      function showSidebar() {
+        document.getElementById('sidebar').style.display = 'block'
+      }
+
+      function hideSidebar() {
+        document.getElementById('sidebar').style.display = 'none'
+      }
+    </script>
+  </body>
+</html>

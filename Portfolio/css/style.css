@@ -17,6 +17,23 @@ body {
   color: var(--black);
 }
 
+/* til scroll baren */
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  outline: 1px solid var(--faded);
+}
+
+/*  */
+
 .section {
   scroll-snap-align: center;
   max-width: 1366px;
@@ -184,9 +201,9 @@ header {
 .about-container {
   display: flex;
   justify-content: space-around;
-  gap: 3rem;
-  margin: 10rem auto;
+  margin: 7rem 10rem;
   max-width: 1240px;
+  gap: 2rem;
 }
 
 .right-side-txt {
@@ -200,13 +217,16 @@ header {
 }
 div.right-side-txt > p {
   margin: 1rem 0rem 1rem 0rem;
+  max-width: 40ch;
 }
 
 .container {
   transition: all 0.2s;
 }
 .card {
-  border-radius: 50px 0px 50px 50px;
+  border-radius: 50px 50px 50px 50px;
+  /* border-radius: 50px 0px 50px 50px; */
+  /* border-radius: 100%; */
 }
 
 .right-side-btn {
@@ -232,10 +252,11 @@ div.right-side-txt > p {
 
 /* SKILLSET */
 
-/* #Kompetencer {
-} */
+#Kompetencer {
+  margin: 4rem auto;
+}
 #Kompetencer h2 {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   text-align: center;
   font-size: 4rem;
   font-weight: 500;
@@ -261,10 +282,37 @@ div.right-side-txt > p {
   line-height: 1.6;
 }
 
+/* værktøjer */
+
+#værktøjer h2 {
+  /* margin-top: 4rem; */
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.værktøjer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.værktøjer-item {
+  width: 100px;
+}
+
 /* projekter */
 
+#Projekter {
+  margin-bottom: 6rem;
+}
+
 #Projekter > h2 {
-  margin-top: 4rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+
   text-align: center;
   font-size: 4rem;
   font-weight: 500;
@@ -272,56 +320,146 @@ div.right-side-txt > p {
 
 /* Footer */
 footer {
-  height: 90vh;
-  width: 100%;
-  background-color: var(--green);
+  height: 50vh;
+  max-width: 1366px;
+  margin: auto;
 }
 
 .footer-content {
-  text-align: center;
   text-decoration: none;
   list-style: none;
 }
 .footer-content h1 {
-  margin: 2rem 2rem;
+  margin: 1rem;
+  font-size: 4rem;
+  font-weight: 500;
 }
 .footer-content a {
   text-decoration: none;
-  color: var(--prime);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  color: var(--black);
 }
 
 .footer-socials {
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   padding: 2rem;
   gap: 4rem;
+  align-items: flex-end;
+  margin: 5rem;
 }
-.made-by {
+
+/* projekt på landing page */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* til individuel projekt sektion */
+
+.projekt-container {
   display: flex;
-  justify-content: space-around;
+  max-width: 1366px;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+/* Left Side: Scrolling Text */
+.text-section {
+  width: 50%;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+.text-section h6 {
+  margin-top: 1rem;
+}
+
+.image-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
 }
 
-/* Brugte https://www.shapedivider.app/ til denne del */
-
-.custom-shape-divider {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
+.image-section img {
+  margin: 0 0 4rem 0;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.custom-shape-divider svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-}
-
-.custom-shape-divider .shape-fill {
-  fill: var(--prime);
+.projekt-btn {
+  padding: 20px;
+  max-width: 1366px;
+  margin: auto;
+  margin-bottom: 6rem;
 }
 
 /* breakpoint */
@@ -332,6 +470,46 @@ footer {
       'one one one one .'
       'four four four four .'
       'two two . . three ';
+  }
+  .footer-content h1 {
+    margin: 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .about-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 768px;
+    margin: 1.375rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+  }
+
+  .text-section {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  .projekt-container {
+    display: flex;
+    max-width: 1366px;
+    margin: auto;
+    margin-top: 4rem;
+    flex-direction: column;
+  }
+  .image-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  #img-re {
+    display: none;
   }
 }
 
@@ -365,19 +543,7 @@ footer {
   .burger {
     display: block;
   }
-  .about-container {
-    display: flex;
-    gap: 4rem;
-    max-width: 768px;
-    margin: 1.375rem auto;
-    flex-direction: column;
-    align-items: center;
-  }
-  #about > div > div.container > img {
-    border-radius: 100%;
-    height: 250px;
-    width: 250px;
-  }
+
   .right-side-txt {
     text-align: center;
   }
@@ -406,10 +572,10 @@ footer {
   }
 }
 
+@media (max-width: 633px) {
+}
+
 @media (max-width: 570px) {
-  body {
-    width: 100vh;
-  }
   .grid-item-two {
     font-size: 3rem;
   }
@@ -422,6 +588,31 @@ footer {
 @media (max-width: 425px) {
   body {
     width: 100vh;
+  }
+  .right-side-txt p {
+    font-size: 1.5rem;
+    max-width: 40ch;
+  }
+  .skills p {
+    font-size: 1.5rem;
+    max-width: 40ch;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+  #about > div > div.right-side-container > div.right-side-txt > h2 {
+    font-size: 3rem;
+  }
+
+  .btn {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 4px;
+    color: var(--prime);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 16px 24px;
   }
 }
 
@@ -438,4 +629,34 @@ footer {
   75% {
     transform: rotate(10deg);
   }
+}
+
+/* Custom Cursor */
+/* hover over img  */
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: var(--green);
+  color: var(--prime);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10000;
+}
+.card:hover {
+  cursor: none;
+}
+.grid-item-four,
+.grid-item-four * {
+  cursor: none;
 }
